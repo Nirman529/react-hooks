@@ -36,6 +36,9 @@ const App = () => {
 					<div className='m-0'>
 						<Link className="link" to="/usememohook">useMemoHook</Link>
 					</div>
+					<div className='m-0'>
+						<Link className="link" to="/usecallbackhook">useCallBackHook</Link>
+					</div>
 				</nav>
 				<div className="col text-center">
 					<Outlet />

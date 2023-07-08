@@ -11,6 +11,7 @@ import UseLayoutEffect from './components/UseLayoutEffect';
 import ParentComponent from './components/parentComponent';
 import UseContextHook from './components/UseContextHook';
 import UseMemoHook from './components/UseMemoHook';
+import UseCallbackHook from './components/UseCallbackHook';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -26,7 +27,8 @@ root.render(
                 <Route path="useimperativehandle" element={<ParentComponent />} />
                 <Route path="usecontexthook" element={<UseContextHook />} />
                 <Route path="usememohook" element={<UseMemoHook />} />
-                <Route path='*' element={ <PageNotFound />} />
+                <Route path="usecallbackhook" element={<UseCallbackHook />} />
+                <Route path='*' element={<PageNotFound />} />
             </Route>
         </Routes>
     </BrowserRouter>
