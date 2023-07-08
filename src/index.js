@@ -1,14 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Usestate from './components/usestate';
+import Useeffect from './components/Useeffect'
+import Useref from './components/Useref'
+import Usereducer from './components/Usereducer'
+import PageNotFound from './components/PageNotFound'
+import UseLayoutEffect from './components/UseLayoutEffect';
+import ParentComponent from './components/parentComponent';
+import UseContextHook from './components/UseContextHook';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
-    <App />
+    <BrowserRouter>
+        <Routes>
+            <Route path='/' element={<App />} >
+                <Route path="usestate" element={<Usestate />} />
+                <Route path="useeffect" element={<Useeffect />} />
+                <Route path="useref" element={<Useref />} />
+                <Route path="usereducer" element={<Usereducer />} />
+                <Route path="uselayouteffect" element={<UseLayoutEffect />} />
+                <Route path="useimperativehandle" element={<ParentComponent />} />
+                <Route path="usecontexthook" element={<UseContextHook />} />
+                <Route path='*' element={ <PageNotFound />} />
+            </Route>
+        </Routes>
+    </BrowserRouter>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
